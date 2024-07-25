@@ -87,8 +87,16 @@ async def submit_rsvp(rsvp: RSVPData):
 
         return {"message": "RSVP registrado con éxito. Por favor, revisa tu email para confirmar tu asistencia."}
     except redis.RedisError as e:
+        redis_client.hset(f"error:{rsvp.email}", mapping={
+            "error": str(e),
+            "timestamp": redis_client.time()[0]  # Tiempo actual del servidor
+        })
         raise HTTPException(status_code=500, detail=f"Error de Redis: {str(e)}")
     except Exception as e:
+        redis_client.hset(f"error:{rsvp.email}", mapping={
+            "error": str(e),
+            "timestamp": redis_client.time()[0]  # Tiempo actual del servidor
+        })
         raise HTTPException(status_code=500, detail=f"Error inesperado: {str(e)}")
 
 @app.get("/api/confirm-rsvp/{token}")
