@@ -32,6 +32,10 @@
       "dest": "api/main.py"
     },
     {
+      "src": "/confirmation",
+      "dest": "/confirmation.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/$1"
     }
