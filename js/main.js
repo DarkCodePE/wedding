@@ -272,11 +272,11 @@ if($('.wow').length > 0) {
 if($('#heart_countdown').length > 0) {
   $('#heart_countdown').countDown({
     targetDate: {
-      'day':    12,
-      'month':  3,
-      'year':   2018,
-      'hour':   11,
-      'min':    13,
+      'day':    26,
+      'month':  7,
+      'year':   2024,
+      'hour':   18,
+      'min':    0,
       'sec':    0
     },
     omitWeeks: true

@@ -5,6 +5,7 @@ import redis
 import os
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -99,7 +100,7 @@ async def confirm_rsvp(token: str):
             if rsvp_data.get("confirmation_token") == token:
                 # Actualizar el estado a confirmado
                 redis_client.hset(key, "confirmed", "true")
-                return {"message": "Asistencia confirmada. ¡Gracias!"}
+                return FileResponse("confirmation.html")
 
         raise HTTPException(status_code=400, detail="Token inválido o expirado")
     except Exception as e:
