@@ -1,0 +1,180 @@
+<!doctype html>
+	<html class="no-js" lang="zxx">
+
+<!-- Mirrored from pixiefy.com/themes/the-heart/onepage/index-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jul 2024 03:44:49 GMT -->
+<head>
+		<title>THE HEART - Modern Multipage Wedding HTML Template</title>
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="The Heart - Creative Wedding Template by pixiefy">
+		<meta name="author" content="pixiefy">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes%7CRoboto:100,300,400,700,900" rel="stylesheet">
+
+
+
+		<!-- All Style Sheet Start -->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/animate.css"/>
+
+		<!-- All Style Sheet End -->
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/responsive.css">
+
+		<style>
+			#map-container {
+				width: 100%;
+				height: 200px;
+			}
+
+			#street-view {
+				width: 100%;
+				height: 200px;
+			}
+		</style>
+	</head>
+
+	<body class="the-heart-default-body the-heart-overly">
+	<!-- The Heart Body Start -->
+	<!-- Preloder -->
+	<div id="prelaoder"></div>
+	<!-- The Heart backend Menu -->
+
+	<!-- The Heart Welcome Section -->
+	<section id="home" class="the-heart-welcome-section jarallax black-overly" style="background-image: url(img/bg2.png);">
+
+		<canvas id="pinkboard"></canvas>
+		<div class="container">
+			<div class="row">
+				<div class="the-heart-welcome-tbl">
+					<div class="the-heart-welcome-tbl-c">
+						<div class="the-heart-welcome-content">
+							<div class="wow fadeInUp" data-wow-duration="2s">
+								<h1>Orlando  &  Rosa</h1>
+								<h4>Compromiso</h4>
+								<div class="the-heart-floral-txt">
+									<h3>26 julio 2024</h3>
+								</div> <!-- .the-heart-floral-txt END -->
+							</div>
+						</div> <!-- .the-heart-welcome-content END -->
+					</div> <!-- .the-heart-welcome-tbl-c END -->
+				</div> <!-- .the-heart-welcome-tbl END -->
+			</div>
+		</div>
+	</section> <!-- .the-heart-welcome-floral-bg END -->
+
+
+
+	<section class="the-heart-you-are-attending-section section-padding" id="the-heart-attending">
+		<div class="container d-flex justify-content-center align-items-center min-vh-100" style="height: 100vh;">
+			<div class="row w-100 justify-content-center" style="display: flex;
+    justify-content: center; height: 100%; width: 100%" >
+				<div class="col-md-6 col-sm-8 col-xs-10 d-flex flex-column align-items-center" style="height: 100%">
+					<div class="the-heart-attending-content text-center" style="max-width: 600px; height: 100%">
+						<div class="the-heart-attending-content-inner"  style="height: 100%">
+							<div class="the-heart-attending-content-inner-top">
+								<h2>Orlando & Rose</h2>
+								<h3>Nuestro Compromiso</h3>
+								<div class="the-heart-floral-txt">
+									<h3>26 julio 2024</h3>
+								</div> <!-- .the-heart-floral-txt END -->
+							</div>
+							<div class="the-heart-attending-content-inner-bottom">
+								<h2>Esta es la ubicación</h2>
+								<div style="    display: flex;
+    width: 84%;
+    margin: 0 auto;">
+									<div id="map-container"></div>
+                                	<div id="street-view"></div>
+								</div>
+							</div> <!-- .the-heart-attending-content-inner-bottom END -->
+						</div> <!-- .the-heart-attending-content-inner END -->
+					</div> <!-- .the-heart-attending-content END -->
+				</div>
+			</div>
+		</div>
+	</section> <!-- .the-heart-you-are-attending-section END -->
+
+
+	<!-- The Heart Footer Section -->
+	<footer class="the-heart-footer-section jarallax" id="the-heart-footer" style="background-image: url(img/footer-bg.png);">
+		<div class="container">
+			<div class="the-heart-tbl">
+				<div class="the-heart-tbl-c">
+					<div class="the-heart-footer-content">
+						<div class="wow fadeInUp" data-wow-duration="2s">
+							<h2>Thank You</h2>
+							<h5>For Being With Us</h5>
+						</div>
+					</div> <!-- .the-heart-footer-content END -->
+				</div> <!-- .the-heart-tbl-c END -->
+			</div> <!-- .the-heart-tbl END -->
+		</div>
+	</footer> <!-- .the-heart-footer-section END -->
+
+	<!-- Js File Start -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="js/v6.js"></script>
+	<!-- header jarallax -->
+	<script src="js/jarallax.js"></script>
+	<script src="js/jarallax-element.js"></script>
+	<script src="js/jarallax-video.js"></script>
+	<script src="js/main.js"></script>
+	<!-- Js File End -->
+	<!-- Google Maps JavaScript API Initialization -->
+	<!-- Load Google Maps API -->
+	<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANY1Pvi6fJ7ufSlBi-GsKzBrsK7p3sOko&callback=initMap"></script>-->
+	 <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANY1Pvi6fJ7ufSlBi-GsKzBrsK7p3sOko&callback=initialize&v=weekly&solution_channel=GMP_CCS_streetview_v2"
+      defer
+    ></script>
+	<!-- Google Maps JavaScript API Initialization -->
+	<script>
+      /**
+       * @license
+       * Copyright 2019 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+      function initialize() {
+        const location = { lat: -12.1066099, lng: -77.0373854 };
+            const map = new google.maps.Map(document.getElementById("map-container"), {
+                center: location,
+                zoom: 17,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "Lugar de la Boda",
+            });
+            const infowindow = new google.maps.InfoWindow({
+                content: '<h3>Lugar de la Boda</h3>',
+            });
+            marker.addListener("click", () => {
+                infowindow.open(map, marker);
+            });
+
+            const panorama = new google.maps.StreetViewPanorama(
+                document.getElementById("street-view"), {
+                    position: location,
+                    pov: {
+                        heading: 34,
+                        pitch: 10,
+                    },
+                }
+            );
+
+            map.setStreetView(panorama);
+        }
+
+        window.initialize = initialize;
+    </script>
+	</body>
+
+<!-- Mirrored from pixiefy.com/themes/the-heart/onepage/index-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jul 2024 03:45:02 GMT -->
+</html>
+
+
