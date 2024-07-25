@@ -222,7 +222,8 @@
 			} catch (error) {
 				console.error('Error:', error);
 				document.getElementById('mail_success').style.display = 'none';
-				document.getElementById('mail_fail').style.display = 'block';
+				//error message display
+				document.getElementById('mail_fail').style.display = error;
 			}finally {
 				document.getElementById('loader').style.display = 'none';
 				document.getElementById('rsvp_submit').disabled = false;
