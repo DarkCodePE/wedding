@@ -351,6 +351,9 @@ header.the-heart-menu-and-logo-section.sticky-menu .the-heart-main-meun{
 .the-heart-attending-form input[type="text"] {
   width: 90%;
 }
+.the-heart-attending-form input[type="email"] {
+  width: 90%;
+}
 .the-heart-memoragble-days-content h2 {
   font-size: 1.667em;
 }

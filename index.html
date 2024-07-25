@@ -92,10 +92,25 @@
 						</div> <!-- .the-heart-attending-content-inner END -->
 					</div> <!-- .the-heart-attending-content END -->
 				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="the-heart-attending-form">
+                        <form id="heart-rsvp-form">
+                            <label for="name">Nombre</label>
+                            <input type="text" name="name" id="the_heart_name" required>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="the_heart_email" required>
+                            <label for="attending">Esta invitación es personal e intransferible</label>
+                            <input type="submit" id="rsvp_submit" name="rsvp_submit" value="Voy a asistir">
+                        </form>
+                        <div class="contact-alert-message">
+                            <div id='mail_success' class='success'><i class="fa fa-check-circle"></i> Tu mensaje ha sido enviado con éxito.</div>
+                            <div id='mail_fail' class='error'><i class="fa fa-exclamation-circle"></i> Lo siento, ocurrió un error, intenta de nuevo.</div>
+                        </div>
+                    </div> <!-- .the-heart-attending-form END -->
+                </div>
 			</div>
 		</div>
 	</section> <!-- .the-heart-you-are-attending-section END -->
-
 
 	<!-- The Heart Footer Section -->
 	<footer class="the-heart-footer-section jarallax" id="the-heart-footer" style="background-image: url(img/footer-bg.png);">
@@ -172,6 +187,39 @@
 
         window.initialize = initialize;
     </script>
+	<script>
+		document.getElementById('heart-rsvp-form').addEventListener('submit', async function(e) {
+			e.preventDefault();
+
+			const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email')
+            };
+			console.log(data)
+			try {
+				const response = await fetch('http://localhost:8000/api/submit-rsvp', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(data),
+				});
+
+				if (response.ok) {
+					document.getElementById('mail_success').style.display = 'block';
+					document.getElementById('mail_fail').style.display = 'none';
+					this.reset();
+				} else {
+					throw new Error('Error en la respuesta del servidor');
+				}
+			} catch (error) {
+				console.error('Error:', error);
+				document.getElementById('mail_success').style.display = 'none';
+				document.getElementById('mail_fail').style.display = 'block';
+			}
+		});
+		</script>
 	</body>
 
 <!-- Mirrored from pixiefy.com/themes/the-heart/onepage/index-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jul 2024 03:45:02 GMT -->
