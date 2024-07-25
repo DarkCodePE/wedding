@@ -204,7 +204,7 @@
 			document.getElementById('rsvp_submit').disabled = true;
 
 			try {
-				const response = await fetch('http://localhost:8000/api/submit-rsvp', {
+				const response = await fetch('/api/submit-rsvp', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
@@ -223,7 +223,7 @@
 				console.error('Error:', error);
 				document.getElementById('mail_success').style.display = 'none';
 				//error message display
-				document.getElementById('mail_fail').style.display = error;
+				document.getElementById('mail_fail').style.display = 'block';
 			}finally {
 				document.getElementById('loader').style.display = 'none';
 				document.getElementById('rsvp_submit').disabled = false;
