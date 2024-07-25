@@ -1560,6 +1560,7 @@ canvas {
   position: absolute;
   right: 0;
   width: 206px;
+  z-index: 10000;
 }
 .the-heart-attending-content-inner {
 	display: table-cell;
@@ -1601,7 +1602,7 @@ canvas {
 }*/
 .the-heart-attending-content-inner-top h3{
    font-size: 1.1em;
-   margin-bottom: 75px;
+   margin-bottom: 46px;
 }
 .the-heart-attending-content p {
    font-weight: 400;
