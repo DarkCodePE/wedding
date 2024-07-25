@@ -265,7 +265,11 @@ h1,h2,h3,h4,h5,h6,a,ul,li{
 	background-repeat: no-repeat;
 	background-position: center center;
 }
-
+#loader {
+    display: none; /* Inicialmente oculto */
+    text-align: center;
+    margin-top: 10px;
+}
 /* Body Background List */
 body.the-heart-default-body {
 	background-image: url(img/the-heart-body-bg.png);

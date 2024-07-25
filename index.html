@@ -105,6 +105,9 @@
                             <div id='mail_success' class='success'><i class="fa fa-check-circle"></i> Tu mensaje ha sido enviado con éxito.</div>
                             <div id='mail_fail' class='error'><i class="fa fa-exclamation-circle"></i> Lo siento, ocurrió un error, intenta de nuevo.</div>
                         </div>
+						  <div id="loader" style="display: none; text-align: center; margin-top: 10px;">
+							  <img src="img/preloader.gif" alt="Cargando..." style="width: 50px;">
+						  </div>
                     </div> <!-- .the-heart-attending-form END -->
                 </div>
 			</div>
@@ -195,7 +198,11 @@
                 name: formData.get('name'),
                 email: formData.get('email')
             };
-			console.log(data)
+
+			// Mostrar preloader y deshabilitar botón de envío
+			document.getElementById('loader').style.display = 'block';
+			document.getElementById('rsvp_submit').disabled = true;
+
 			try {
 				const response = await fetch('http://localhost:8000/api/submit-rsvp', {
 					method: 'POST',
@@ -216,6 +223,9 @@
 				console.error('Error:', error);
 				document.getElementById('mail_success').style.display = 'none';
 				document.getElementById('mail_fail').style.display = 'block';
+			}finally {
+				document.getElementById('loader').style.display = 'none';
+				document.getElementById('rsvp_submit').disabled = false;
 			}
 		});
 		</script>
