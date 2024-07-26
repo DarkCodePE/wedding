@@ -80,7 +80,7 @@ async def submit_rsvp(rsvp: RSVPData):
         redis_client.sadd("all_rsvps", rsvp.email)
 
         # Generar enlace de confirmación usando el dominio de Vercel
-        confirmation_link = f"https://{VERCEL_URL}/api/confirm-rsvp/{token}"
+        confirmation_link = f"wedding-sigma-inky.vercel.app/api/confirm-rsvp/{token}"
 
         # Enviar email de confirmación
         send_confirmation_email(rsvp.email, confirmation_link)
